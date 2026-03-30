@@ -284,7 +284,7 @@
     #projects .section-label::before { background: var(--gold2); }
     #projects .section-title em { color: var(--gold2); }
     #projects .section-sub { color: rgba(247,244,238,.6); }
-    .projects-header { display: flex; justify-content: space-between; align-items: flex-end; flex-wrap: wrap; gap: 20px; margin-bottom: 52px; max-width: 1200px; margin-left: auto; margin-right: auto; margin-bottom: 52px; }
+    .projects-header { display: flex; justify-content: space-between; align-items: flex-end; flex-wrap: wrap; gap: 20px; max-width: 1200px; margin: 0 auto 52px; }
     .projects-grid {
       display: grid; grid-template-columns: repeat(2, 1fr); gap: 28px;
       max-width: 1200px; margin: 0 auto;
@@ -319,7 +319,6 @@
       background: rgba(201,168,76,.12); color: var(--gold2);
       padding: 4px 10px; border-radius: 6px;
     }
-    /* featured project */
     .project-card.featured {
       grid-column: 1 / -1;
       flex-direction: row; align-items: stretch;
@@ -404,8 +403,19 @@
       cursor: pointer; transition: background .2s, transform .15s, box-shadow .2s;
     }
     .btn-send:hover { background: var(--gold2); transform: translateY(-2px); box-shadow: 0 10px 28px rgba(201,168,76,.3); }
-    .form-msg { padding: 12px 16px; border-radius: 10px; font-size: .9rem; display: none; }
-    .form-msg.success { background: rgba(76,175,80,.15); border: 1px solid rgba(76,175,80,.3); color: #a5d6a7; display: block; }
+    .btn-send:disabled { opacity: .6; cursor: not-allowed; transform: none; }
+    .form-msg {
+      padding: 14px 18px; border-radius: 12px; font-size: .9rem;
+      display: none; line-height: 1.5;
+    }
+    .form-msg.success {
+      background: rgba(76,175,80,.15); border: 1px solid rgba(76,175,80,.3);
+      color: #a5d6a7; display: block;
+    }
+    .form-msg.error {
+      background: rgba(244,67,54,.15); border: 1px solid rgba(244,67,54,.3);
+      color: #ef9a9a; display: block;
+    }
 
     /* ─── FOOTER ─── */
     footer {
@@ -532,18 +542,10 @@
           <div class="stat-num">5+</div>
           <div class="stat-label">Projects Completed</div>
         </div>
-        <!-- <div class="stat reveal reveal-delay-2">
-          <div class="stat-num">3+</div>
-          <div class="stat-label">Tech Stacks Mastered</div>
-        </div> -->
         <div class="stat reveal reveal-delay-3">
           <div class="stat-num">∞</div>
           <div class="stat-label">Bugs Squashed</div>
         </div>
-        <!-- <div class="stat reveal reveal-delay-4">
-          <div class="stat-num">1K+</div>
-          <div class="stat-label">YouTube Learners</div>
-        </div> -->
       </div>
     </div>
 
@@ -556,12 +558,9 @@
         "I don't just write code — I architect experiences that feel effortless to use."
       </blockquote>
       <p class="about-p reveal reveal-delay-2">
-        I'm a Computer Science Engineering student with a deep love for full-stack development. 
+        I'm a Computer Science Engineering student with a deep love for full-stack development.
         From crafting pixel-perfect UIs to designing scalable backend systems, I thrive at every layer of the stack.
       </p>
-      <!-- <p class="about-p reveal reveal-delay-3">
-        When I'm not coding, I'm sharing what I've learned on my YouTube channel — making complex tech concepts accessible to everyone. I believe the best developers are also great communicators.
-      </p> -->
       <div class="reveal reveal-delay-4">
         <a href="https://drive.google.com/file/d/1wwAgmuBWcQd-g7TL5we1cbAyGvNLnUiV/view?usp=sharing" target="_blank" rel="noopener noreferrer">
           <button class="btn-primary">Download Resume →</button>
@@ -613,7 +612,6 @@
           <span class="tag">Git</span>
           <span class="tag">GitHub</span>
           <span class="tag">VS Code</span>
-          <!-- <span class="tag">Figma</span> -->
           <span class="tag">Postman</span>
         </div>
       </div>
@@ -632,7 +630,6 @@
   </div>
 
   <div class="projects-grid">
-    <!-- Featured -->
     <div class="project-card featured reveal">
       <img src="https://i.pinimg.com/1200x/8d/2e/a9/8d2ea91cc7ff8f4c35a1fd3b8ad70655.jpg" alt="TrailVista" class="project-img"/>
       <div class="project-body">
@@ -649,33 +646,17 @@
     </div>
 
     <div class="project-card reveal reveal-delay-1">
-      <img src="https://i.pinimg.com/736x/cb/eb/e0/cbebe01cb70650fe7548519b0e68249a.jpg" alt="Construction Managment Site" class="project-img"/>
+      <img src="https://i.pinimg.com/736x/cb/eb/e0/cbebe01cb70650fe7548519b0e68249a.jpg" alt="Construction Management Site" class="project-img"/>
       <div class="project-body">
         <div class="project-num">02</div>
         <h3>Construction Management Site</h3>
         <p>A construction management site built with clean UI and responsive design.</p>
         <div class="project-footer">
           <span class="p-tag">React.Js</span>
-          <!-- <span class="p-tag"></span> -->
           <span class="p-tag">CSS</span>
         </div>
       </div>
     </div>
-
-    <!-- <div class="project-card reveal reveal-delay-2">
-      <img src="AMS.jpeg" alt="Lawn Management App" class="project-img"/>
-      <div class="project-body">
-        <div class="project-num">03</div>
-        <h3>Lawn Management App</h3>
-        <p>A full-stack web application for managing lawn service clients, scheduling availability, and tracking jobs — built with React/Vite frontend and MongoDB Atlas backend.</p>
-        <div class="project-footer">
-          <span class="p-tag">React</span>
-          <span class="p-tag">Vite</span>
-          <span class="p-tag">MongoDB Atlas</span>
-          <span class="p-tag">Bootstrap</span>
-        </div>
-      </div>
-    </div> -->
   </div>
 </section>
 
@@ -685,12 +666,11 @@
     <div class="reveal">
       <div class="section-label" style="justify-content:center;">Content</div>
       <h2 class="section-title" style="text-align:center;">I also <em>teach</em> what I know.</h2>
-      <p class="section-sub" style="text-align:center;margin:0 auto 40px;" >Sharing coding tutorials, tech tips & productivity hacks with a growing community.</p>
+      <p class="section-sub" style="text-align:center;margin:0 auto 40px;">Sharing coding tutorials, tech tips & productivity hacks with a growing community.</p>
     </div>
     <div class="yt-card reveal reveal-delay-1">
       <div class="yt-icon">▶</div>
       <div class="yt-handle">@clumsyvaish</div>
-      <!-- <p class="yt-desc">Coding · Tech · Productivity<br/>Making complex topics simple, one video at a time.</p> -->
       <a href="https://youtube.com/@clumsyvaish" target="_blank" class="btn-yt">
         ▶ &nbsp;Visit My Channel
       </a>
@@ -734,12 +714,12 @@
       <div id="form-msg" class="form-msg"></div>
       <form class="contact-form" id="contact-form">
         <div class="form-row">
-          <input type="text" placeholder="Your Name" required/>
-          <input type="email" placeholder="Your Email" required/>
+          <input type="text"  id="f-name"    placeholder="Your Name"    required/>
+          <input type="email" id="f-email"   placeholder="Your Email"   required/>
         </div>
-        <input type="text" placeholder="Subject"/>
-        <textarea placeholder="Tell me about your project or opportunity…" rows="5"></textarea>
-        <button type="submit" class="btn-send">Send Message ✦</button>
+        <input type="text"    id="f-subject" placeholder="Subject"/>
+        <textarea             id="f-message" placeholder="Tell me about your project or opportunity…" rows="5"></textarea>
+        <button type="submit" class="btn-send" id="send-btn">Send Message ✦</button>
       </form>
     </div>
   </div>
@@ -760,9 +740,16 @@
   /* ── Custom Cursor ── */
   const cur = document.getElementById('cursor');
   const ring = document.getElementById('cursor-ring');
-  let mx=0, my=0, rx=0, ry=0;
-  document.addEventListener('mousemove', e => { mx=e.clientX; my=e.clientY; cur.style.left=mx+'px'; cur.style.top=my+'px'; });
-  function animRing() { rx+=(mx-rx)*.14; ry+=(my-ry)*.14; ring.style.left=rx+'px'; ring.style.top=ry+'px'; requestAnimationFrame(animRing); }
+  let mx = 0, my = 0, rx = 0, ry = 0;
+  document.addEventListener('mousemove', e => {
+    mx = e.clientX; my = e.clientY;
+    cur.style.left = mx + 'px'; cur.style.top = my + 'px';
+  });
+  function animRing() {
+    rx += (mx - rx) * .14; ry += (my - ry) * .14;
+    ring.style.left = rx + 'px'; ring.style.top = ry + 'px';
+    requestAnimationFrame(animRing);
+  }
   animRing();
 
   /* ── Nav scroll highlight ── */
@@ -770,9 +757,9 @@
   const sections = [...document.querySelectorAll('section[id]')];
   function setActive() {
     const sp = window.scrollY + 120;
-    let cur = sections[0];
-    for (const s of sections) { if (s.offsetTop <= sp) cur = s; }
-    navLinks.forEach(a => a.classList.toggle('active', a.getAttribute('href') === '#'+cur.id));
+    let active = sections[0];
+    for (const s of sections) { if (s.offsetTop <= sp) active = s; }
+    navLinks.forEach(a => a.classList.toggle('active', a.getAttribute('href') === '#' + active.id));
   }
   window.addEventListener('scroll', setActive, { passive: true });
   setActive();
@@ -799,20 +786,50 @@
   }, { threshold: 0.12 });
   reveals.forEach(r => io.observe(r));
 
-  /* ── Contact form ── */
-  document.getElementById('contact-form').addEventListener('submit', function(e) {
+  /* ── Contact Form — Google Apps Script ── */
+  const GOOGLE_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbwaIgpVIcYtpx9oXpdm0E37vI0RGveOPpkZwr8b4AYDzkqSgRXgf2mBoxoUwsi3ZOx3QA/exec";
+
+  document.getElementById('contact-form').addEventListener('submit', async function (e) {
     e.preventDefault();
-    const name = this.querySelector('input[type="text"]').value.trim();
-    const email = this.querySelector('input[type="email"]').value.trim();
-    const message = this.querySelector('textarea').value.trim();
-    if (!name || !email) { alert('Please fill in your name and email.'); return; }
-    const subject = encodeURIComponent('Portfolio Contact from ' + name);
-    const body = encodeURIComponent('Name: ' + name + '\nEmail: ' + email + '\n\n' + message);
-    window.location.href = 'mailto:your.email@example.com?subject=' + subject + '&body=' + body;
-    const msg = document.getElementById('form-msg');
-    msg.textContent = '✓ Message opened in your mail client. Thank you, ' + name + '!';
-    msg.className = 'form-msg success';
-    this.reset();
+
+    const name    = document.getElementById('f-name').value.trim();
+    const email   = document.getElementById('f-email').value.trim();
+    const subject = document.getElementById('f-subject').value.trim();
+    const message = document.getElementById('f-message').value.trim();
+    const msg     = document.getElementById('form-msg');
+    const btn     = document.getElementById('send-btn');
+
+    if (!name || !email) {
+      msg.textContent = '⚠ Please fill in your name and email.';
+      msg.className = 'form-msg error';
+      return;
+    }
+
+    btn.textContent = 'Sending…';
+    btn.disabled = true;
+    msg.className = 'form-msg';
+    msg.style.display = 'none';
+
+    try {
+      await fetch(GOOGLE_SCRIPT_URL, {
+        method: "POST",
+        mode: "no-cors",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ name, email, subject: subject || "No Subject", message: message || "No message provided." })
+      });
+
+      msg.textContent = '✓ Message sent! Thank you, ' + name + '. I\'ll be in touch soon.';
+      msg.className = 'form-msg success';
+      this.reset();
+
+    } catch (err) {
+      msg.textContent = '✗ Something went wrong. Please try again or email me directly.';
+      msg.className = 'form-msg error';
+      console.error('Form error:', err);
+    }
+
+    btn.textContent = 'Send Message ✦';
+    btn.disabled = false;
   });
 </script>
 </body>
