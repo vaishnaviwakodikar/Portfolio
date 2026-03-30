@@ -787,7 +787,8 @@
   reveals.forEach(r => io.observe(r));
 
   /* ── Contact Form — Google Apps Script ── */
-  const GOOGLE_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbwaIgpVIcYtpx9oXpdm0E37vI0RGveOPpkZwr8b4AYDzkqSgRXgf2mBoxoUwsi3ZOx3QA/exec";
+  // ✅ FIXED: Updated to the correct deployment URL
+  const GOOGLE_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbw9MXyNmGx5eFJpeg76Vaf9UBlxTacBvBlJ44IBTQjszA8eLylS2qQl7rRrMykGnCa0UA/exec";
 
   document.getElementById('contact-form').addEventListener('submit', async function (e) {
     e.preventDefault();
