@@ -117,6 +117,48 @@
     .project-card.featured .project-img { width: 45%; aspect-ratio: auto; flex-shrink: 0; }
     .project-card.featured .project-body { justify-content: center; }
     .project-card.featured h3 { font-size: 1.7rem; }
+    /* ─── EXPERIENCE ─── */
+    #experience { background: var(--ink); color: var(--paper); }
+    #experience .section-label { color: var(--gold2); }
+    #experience .section-label::before { background: var(--gold2); }
+    #experience .section-title em { color: var(--gold2); }
+    .exp-wrapper { max-width: 860px; margin: 0 auto; }
+    .exp-header { margin-bottom: 52px; }
+    .timeline { position: relative; padding-left: 32px; }
+    .timeline-line { position: absolute; left: 7px; top: 10px; bottom: 10px; width: 1px; background: rgba(255,255,255,.12); }
+    .timeline-item { position: relative; margin-bottom: 0; }
+    .timeline-dot { position: absolute; left: -28px; top: 24px; width: 15px; height: 15px; border-radius: 50%; background: var(--gold); box-shadow: 0 0 0 4px rgba(201,168,76,.2); flex-shrink: 0; }
+    .timeline-card { background: rgba(255,255,255,.04); border: 1px solid rgba(255,255,255,.09); border-radius: 20px; padding: 32px 36px; transition: border-color .3s, box-shadow .3s; }
+    .timeline-card:hover { border-color: rgba(201,168,76,.3); box-shadow: 0 16px 48px rgba(0,0,0,.3); }
+    .tc-top { display: flex; justify-content: space-between; align-items: flex-start; gap: 20px; flex-wrap: wrap; }
+    .tc-role { font-family: 'Playfair Display', serif; font-size: 1.3rem; font-weight: 700; color: var(--paper); margin-bottom: 6px; }
+    .tc-company { font-size: .9rem; color: rgba(247,244,238,.5); }
+    .tc-badge { display: inline-flex; align-items: center; gap: 7px; background: rgba(201,168,76,.12); color: var(--gold2); font-family: 'DM Mono', monospace; font-size: .72rem; letter-spacing: .06em; padding: 6px 14px; border-radius: 100px; border: 1px solid rgba(201,168,76,.2); white-space: nowrap; flex-shrink: 0; }
+    .tc-divider { height: 1px; background: rgba(255,255,255,.08); margin: 22px 0; }
+    .tc-points { list-style: none; display: flex; flex-direction: column; gap: 12px; margin-bottom: 22px; }
+    .tc-points li { font-size: .92rem; line-height: 1.7; color: rgba(247,244,238,.65); padding-left: 18px; position: relative; }
+    .tc-points li::before { content: ''; position: absolute; left: 0; top: 9px; width: 5px; height: 5px; border-radius: 50%; background: var(--gold); }
+    .tc-tags { display: flex; flex-wrap: wrap; gap: 8px; }
+
+    /* ─── EDUCATION ─── */
+    #education { background: var(--paper); }
+    .edu-wrapper { max-width: 1100px; margin: 0 auto; }
+    .edu-header { margin-bottom: 52px; }
+    .edu-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+    .edu-card { background: var(--card); border: 1px solid var(--border); border-radius: 20px; padding: 32px 28px; display: flex; gap: 20px; align-items: flex-start; transition: transform .25s, box-shadow .25s, border-color .25s; position: relative; overflow: hidden; }
+    .edu-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px; background: linear-gradient(90deg, var(--gold), var(--gold2)); transform: scaleX(0); transform-origin: left; transition: transform .3s ease; }
+    .edu-card:hover { transform: translateY(-6px); box-shadow: 0 20px 50px rgba(14,14,14,.1); border-color: transparent; }
+    .edu-card:hover::before { transform: scaleX(1); }
+    .edu-icon { width: 42px; height: 42px; background: rgba(201,168,76,.1); border-radius: 12px; display: grid; place-items: center; flex-shrink: 0; color: var(--gold); }
+    .edu-icon svg { width: 22px; height: 22px; }
+    .edu-body { display: flex; flex-direction: column; gap: 8px; }
+    .edu-degree { font-family: 'Playfair Display', serif; font-size: 1rem; font-weight: 700; line-height: 1.3; color: var(--ink); }
+    .edu-school { font-size: .82rem; color: var(--muted); line-height: 1.5; }
+    .edu-meta { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 4px; }
+    .edu-year { font-family: 'DM Mono', monospace; font-size: .72rem; background: rgba(201,168,76,.12); color: #8a6a1e; padding: 3px 10px; border-radius: 6px; }
+    .edu-grade { font-family: 'DM Mono', monospace; font-size: .72rem; background: rgba(14,14,14,.06); color: var(--ink); padding: 3px 10px; border-radius: 6px; font-weight: 500; }
+    @media (max-width: 860px) { .edu-grid { grid-template-columns: 1fr; } }
+
     #youtube { background: var(--paper); }
     .yt-inner { max-width: 800px; margin: 0 auto; text-align: center; }
     .yt-card { background: var(--card); border: 1px solid var(--border); border-radius: 24px; padding: 48px 40px; box-shadow: 0 16px 50px rgba(14,14,14,.07); transition: transform .3s, box-shadow .3s; }
@@ -179,6 +221,8 @@
     <a href="#about">About</a>
     <a href="#skills">Skills</a>
     <a href="#projects">Projects</a>
+    <a href="#experience">Experience</a>
+    <a href="#education">Education</a>
     <a href="#youtube">YouTube</a>
     <a href="#contact" class="nav-cta">Hire Me</a>
   </nav>
@@ -221,7 +265,7 @@
         <div class="about-img-overlay"></div>
       </div>
       <div class="about-stats">
-        <div class="stat reveal reveal-delay-1"><div class="stat-num">5+</div><div class="stat-label">Projects Completed</div></div>
+        <div class="stat reveal reveal-delay-1"><div class="stat-num">3+</div><div class="stat-label">Projects Completed</div></div>
         <div class="stat reveal reveal-delay-3"><div class="stat-num">∞</div><div class="stat-label">Bugs Squashed</div></div>
       </div>
     </div>
@@ -233,8 +277,8 @@
       <blockquote class="about-highlight reveal reveal-delay-1">"I don't just write code — I architect experiences that feel effortless to use."</blockquote>
       <p class="about-p reveal reveal-delay-2">I'm a Computer Science Engineering student with a deep love for full-stack development. From crafting pixel-perfect UIs to designing scalable backend systems, I thrive at every layer of the stack.</p>
       <div class="reveal reveal-delay-4">
-        <a href="https://drive.google.com/file/d/1wwAgmuBWcQd-g7TL5we1cbAyGvNLnUiV/view?usp=sharing" target="_blank" rel="noopener noreferrer">
-          <button class="btn-primary">Download Resume →</button>
+        <a href="https://drive.google.com/file/d/1ylN6Tihvv_epKlKGLX6YNJSJvWv_L47-/view?usp=drive_link" target="_blank" rel="noopener noreferrer">
+          <button class="btn-primary" style="background: #c9a84c; color: #1a1a1a; border-color: #c9a84c;">Download Resume →</button>
         </a>
       </div>
     </div>
@@ -328,6 +372,98 @@
         <p>A student life dashboard — track mood, habits, study sessions, expenses, and attendance in one cozy, OS-inspired interface.</p>
         <div class="project-footer">
           <span class="p-tag">React</span><span class="p-tag">Vite</span><span class="p-tag">JavaScript</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── EXPERIENCE ─── -->
+<section id="experience">
+  <div class="exp-wrapper">
+    <div class="exp-header reveal">
+      <div class="section-label">Experience</div>
+      <h2 class="section-title">Where I've <em>worked.</em></h2>
+    </div>
+    <div class="timeline reveal reveal-delay-1">
+      <div class="timeline-line"></div>
+      <div class="timeline-item">
+        <div class="timeline-dot"></div>
+        <div class="timeline-card">
+          <div class="tc-top">
+            <div>
+              <div class="tc-role">Junior Software Developer Intern</div>
+              <div class="tc-company">Royals Webtech Pvt. Ltd — Nagpur</div>
+            </div>
+            <div class="tc-badge">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+              Dec 2025 — Present
+            </div>
+          </div>
+          <div class="tc-divider"></div>
+          <ul class="tc-points">
+            <li>Building and maintaining full-stack web applications using React, Node.js, and MongoDB in a production environment.</li>
+            <li>Collaborating with the team on real client projects — handling both frontend UI and backend API integration.</li>
+            <li>Gaining hands-on experience with deployment, version control workflows, and agile development practices.</li>
+          </ul>
+          <div class="tc-tags">
+            <span class="p-tag">React</span>
+            <span class="p-tag">Node.js</span>
+            <span class="p-tag">MongoDB</span>
+            <span class="p-tag">Express.js</span>
+            <span class="p-tag">Full Stack</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── EDUCATION ─── -->
+<section id="education">
+  <div class="edu-wrapper">
+    <div class="edu-header reveal">
+      <div class="section-label">Education</div>
+      <h2 class="section-title">My academic <em>journey.</em></h2>
+    </div>
+    <div class="edu-grid">
+      <div class="edu-card reveal reveal-delay-1">
+        <div class="edu-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>
+        </div>
+        <div class="edu-body">
+          <div class="edu-degree">B.Tech — Computer Science & Engineering</div>
+          <div class="edu-school">Tulsiramji Gaikwad-Patil College of Engineering & Technology, Nagpur</div>
+          <div class="edu-meta">
+            <span class="edu-year">2022 — 2026</span>
+            <span class="edu-grade">CGPA 7.42</span>
+          </div>
+        </div>
+      </div>
+      <div class="edu-card reveal reveal-delay-2">
+        <div class="edu-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
+        </div>
+        <div class="edu-body">
+          <div class="edu-degree">HSC — Science (12th)</div>
+          <div class="edu-school">S.M. Mohta College of Science, Nagpur</div>
+          <div class="edu-meta">
+            <span class="edu-year">2022</span>
+            <span class="edu-grade">72.50%</span>
+          </div>
+        </div>
+      </div>
+      <div class="edu-card reveal reveal-delay-3">
+        <div class="edu-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>
+        </div>
+        <div class="edu-body">
+          <div class="edu-degree">SSC (10th)</div>
+          <div class="edu-school">Ramesh Chandak English School, Nagpur</div>
+          <div class="edu-meta">
+            <span class="edu-year">2020</span>
+            <span class="edu-grade">91.60%</span>
+          </div>
         </div>
       </div>
     </div>
